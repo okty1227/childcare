@@ -88,7 +88,7 @@
 
         //slider selection setting
         const minYear = 2000;
-        const maxYear = 2020;
+        const maxYear = 2024;
         const yearInterval = maxYear - minYear;
 
         // initial setting
@@ -684,14 +684,14 @@
             let allpopCasePoints = trendPlot.selectAll('circle.pop');
             let allpopCaseLine = trendPlot.selectAll('line.pop');
 
-            console.log(selectedStateTrend)
+            // console.log(selectedStateTrend)
             // point for each year - for all cases
             alltotalCasePoints
                 .data(selectedStateTrend)
                 .join('circle')
                 .attr('class', 'tt')
                 .attr('cx', function (d, i) {
-                    return i * trendInnerWidth / 20
+                    return i * trendInnerWidth / yearInterval
                 })
                 .attr('cy', function (d) {
                     return yAxisScaler(d.Total_CC) + trendMargin.bottom
@@ -704,13 +704,13 @@
                 .data(selectedStateTrend)
                 .join('line')
                 .attr('class', 'tt')
-                .attr('x1', (d, i) => i * trendInnerWidth / 20)
+                .attr('x1', (d, i) => i * trendInnerWidth / yearInterval)
                 .attr('y1', (d, i) => yAxisScaler(d.Total_CC) + trendMargin.bottom)
                 .attr('x2', (d, i, nodes) => {
                     if (i === nodes.length - 1) {
-                        return (i) * trendInnerWidth / 20
+                        return (i) * trendInnerWidth / yearInterval
                     } else {
-                        return (i + 1) * trendInnerWidth / 20
+                        return (i + 1) * trendInnerWidth / yearInterval
                     }
                 }
                 )
@@ -731,7 +731,7 @@
                 .join('circle')
                 .attr('class', 'Other_CC')
                 .attr('cx', function (d, i) {
-                    return i * trendInnerWidth / 20
+                    return i * trendInnerWidth / yearInterval
                 })
 
                 .attr('cy', function (d) {
@@ -745,13 +745,13 @@
             allotherCaseLine.data(selectedStateTrend)
                 .join('line')
                 .attr('class', 'Other_CC')
-                .attr('x1', (d, i) => i * trendInnerWidth / 20)
+                .attr('x1', (d, i) => i * trendInnerWidth / yearInterval)
                 .attr('y1', (d, i) => yAxisScaler(d.Other_CC) + trendMargin.bottom)
                 .attr('x2', (d, i, nodes) => {
                     if (i === nodes.length - 1) {
-                        return (i) * trendInnerWidth / 20
+                        return (i) * trendInnerWidth / yearInterval
                     } else {
-                        return (i + 1) * trendInnerWidth / 20
+                        return (i + 1) * trendInnerWidth / yearInterval
                     }
                 }
                 )
@@ -772,7 +772,7 @@
                 .join('circle')
                 .attr('class', 'FDH')
                 .attr('cx', function (d, i) {
-                    return i * trendInnerWidth / 20
+                    return i * trendInnerWidth / yearInterval
                 })
                 .attr('cy', function (d) {
                     return yAxisScaler(d.FDH) + trendMargin.bottom
@@ -786,13 +786,13 @@
             allfdhCaseLine.data(selectedStateTrend)
                 .join('line')
                 .attr('class', 'FDH')
-                .attr('x1', (d, i) => i * trendInnerWidth / 20)
+                .attr('x1', (d, i) => i * trendInnerWidth / yearInterval)
                 .attr('y1', (d, i) => yAxisScaler(d.FDH) + trendMargin.bottom)
                 .attr('x2', (d, i, nodes) => {
                     if (i === nodes.length - 1) {
-                        return (i) * trendInnerWidth / 20
+                        return (i) * trendInnerWidth / yearInterval
                     } else {
-                        return (i + 1) * trendInnerWidth / 20
+                        return (i + 1) * trendInnerWidth / yearInterval
                     }
                 }
                 )
@@ -813,7 +813,7 @@
                 .join('circle')
                 .attr('class', 'pop')
                 .attr('cx', function (d, i) {
-                    return i * trendInnerWidth / 20
+                    return i * trendInnerWidth / yearInterval
                 })
                 .attr('cy', function (d) {
                     return yAxisScaler(d.pop) + trendMargin.bottom
@@ -830,13 +830,13 @@
                 .data(selectedStateTrend)
                 .join('line')
                 .attr('class', 'pop')
-                .attr('x1', (d, i) => i * trendInnerWidth / 20)
+                .attr('x1', (d, i) => i * trendInnerWidth / yearInterval)
                 .attr('y1', (d, i) => yAxisScaler(d.pop) + trendMargin.bottom)
                 .attr('x2', (d, i, nodes) => {
                     if (i === nodes.length - 1) {
-                        return (i) * trendInnerWidth / 20
+                        return (i) * trendInnerWidth / yearInterval
                     } else {
-                        return (i + 1) * trendInnerWidth / 20
+                        return (i + 1) * trendInnerWidth / yearInterval
                     }
                 }
                 )
