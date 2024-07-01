@@ -114,9 +114,9 @@
         let typeRects = stateMap.append('g');
         let selectIndicatorY = typeSelectorWidth * 1.2;
 
-        const childcareTypes = ['Total_CC', 'Other_CC', 'FDH']
+        const childcareTypes = ['Total_CC', 'Other_CC', 'FDH',]
 
-        const trendLineColors = { 'Total Childcare': '#ffca3a', '0-4Yrs Population': '#8ac926', 'Family Day Care': '#4267ac' };
+        const trendLineColors = { 'Total Childcare': '#ffca3a', '0-4Yrs Population': '#8ac926', 'Family Day Care': '#4267ac','Population(thousand)':'black'};
 
         // let countyDetails = { 'Total CC': null, 'Other CC': null, 'FDH': null };
         let countyDetails = {}
@@ -597,7 +597,7 @@
             trendData = await d3.csv('data/final_trend2.csv');
             trendData = trendData.map(obj => Object.fromEntries(
                 Object.entries(obj).map(([key, value]) => {
-                    if (key === 'Year' || key === 'Other_CC' || key === 'Total_CC' || key === 'FDH' || key==='fips'|| key==='pop') {
+                    if (key === 'Year' || key === 'Other_CC' || key === 'Total_CC' || key === 'FDH' || key === 'fips' || key === 'pop') {
                         return [key, Number(value)];
                     }
                     return [key, value];
@@ -613,7 +613,7 @@
                 const totalCase = Number(curr.Total_CC);
                 const pop = Number(curr.pop);
 
-                return [...acc, fdhCase, otherCase, totalCase,pop];
+                return [...acc, fdhCase, otherCase, totalCase, pop];
             }, []);
 
             let minCaseNumber = Math.min(...allCaseNumber);
@@ -629,7 +629,6 @@
             await loadTrendData();
 
             let stateCode = Number(stateFips[stateFip].id);
-            // console.log(trendData)
             let selectedStateTrend = trendData.filter((d) => d.fips === stateCode);
 
             selectedStateTrend = selectedStateTrend.sort((a, b) => a.Year - b.Year);
@@ -648,9 +647,9 @@
                 .range([0, trendInnerHeight]);
             // const digitY = length(maxCaseNum);
 
-            function getDigit(nb){
-                if (nb === 0) {return 1}
-                return Math.floor(Math.log10(Math.abs(nb))) +1;
+            function getDigit(nb) {
+                if (nb === 0) { return 1 }
+                return Math.floor(Math.log10(Math.abs(nb))) + 1;
             }
 
             const Ydigit = getDigit(maxCaseNum);
@@ -662,12 +661,11 @@
             Yaxis
                 .attr('transform', `translate(${trendMargin.left},${trendMargin.bottom})`)
                 .attr('class', 'yTrendTicks')
-                .call(d3.axisRight(yAxisScaler).tickSize(0).tickFormat(function(d){return d}));
-                // .call(d3.axisRight(yAxisScaler).tickSize(0).tickFormat(function(d){return d+'k'}));
+                .call(d3.axisRight(yAxisScaler).tickSize(0).tickFormat(function (d) { return d }));
 
             // interval between tick and x axis
             let yTickText = d3.selectAll("g.yTrendTicks .tick text")
-            yTickText.attr('x', -Ydigit*8 -10);
+            yTickText.attr('x', -Ydigit * 8 - 10);
             yTickText.attr('y', 0);
 
             let xTickText = d3.selectAll("g.xTrendTicks .tick text")
@@ -741,7 +739,7 @@
                 })
                 .attr('r', trendLinePointRadius)
                 .style('fill', trendLineColors['0-4Yrs Population']).attr('transform', `translate(${trendMargin.left},${0})`)
-                .style('opacity',0.5);
+                .style('opacity', 0.5);
 
             // line for others cases
             allotherCaseLine.data(selectedStateTrend)
@@ -781,7 +779,7 @@
                 })
                 .attr('r', trendLinePointRadius)
                 .style('fill', trendLineColors['Family Day Care']).attr('transform', `translate(${trendMargin.left},${0})`)
-                .style('opacity',0.5);
+                .style('opacity', 0.5);
 
 
             // line for fdh cases
@@ -822,9 +820,9 @@
                 })
                 .attr('r', trendLinePointRadius)
                 .style('fill', 'black').attr('transform', `translate(${trendMargin.left},${0})`)
-                .style('opacity',0.5);
+                .style('opacity', 0.5);
 
- 
+
 
 
             // line for pop cases
@@ -852,8 +850,6 @@
                 ).attr('id', (d, i) => d.pop)
                 .attr('transform', `translate(${trendMargin.left},${0})`)
                 .attr('stroke', 'black');
-
-
 
         }
 
