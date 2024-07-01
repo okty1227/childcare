@@ -1,0 +1,307 @@
+State,Year,ln_name,fipscode,Other_CC,FDH,Total_CC
+AL,2019,Alabama,1,6,6,3
+AL,2020,Alabama,1,3,9,9
+AK,2019,ALASKA,2,4,6,6
+AK,2020,ALASKA,2,6,9,6
+AR,2019,Arkansas,5,7,6,9
+AR,2020,Arkansas,5,0,5,3
+AZ,2019,Arizona,4,3,4,2
+AZ,2020,Arizona,4,4,2,8
+CA,2019,California,6,8,0,7
+CA,2020,California,6,7,8,9
+CO,2019,Colorado,8,9,0,9
+CO,2020,Colorado,8,7,8,9
+CT,2019,Connecticut,9,1,3,4
+CT,2020,Connecticut,9,3,9,6
+DC,2019,District of Columbia,11,4,7,3
+DC,2020,District of Columbia,11,7,1,0
+DE,2019,Delaware,10,7,4,6
+DE,2020,Delaware,10,6,2,5
+FL,2019,Florida,12,0,9,1
+FL,2020,Florida,12,0,9,5
+GA,2019,Georgia,13,6,3,3
+GA,2020,Georgia,13,1,5,8
+HI,2019,HAWAII,15,8,5,1
+HI,2020,HAWAII,15,3,3,7
+IA,2019,Iowa,19,2,0,6
+IA,2020,Iowa,19,0,9,1
+ID,2019,Idaho,16,8,2,7
+ID,2020,Idaho,16,3,5,2
+IL,2019,Illinois,17,4,2,3
+IL,2020,Illinois,17,0,8,5
+IN,2019,Indiana,18,8,4,7
+IN,2020,Indiana,18,0,7,0
+KS,2019,Kansas,20,5,0,8
+KS,2020,Kansas,20,4,4,1
+KY,2019,Kentucky,21,0,7,4
+KY,2020,Kentucky,21,1,2,0
+LA,2019,Louisiana,22,1,1,6
+LA,2020,Louisiana,22,1,0,1
+MA,2019,Massachusetts,25,0,0,4
+MA,2020,Massachusetts,25,7,1,4
+MD,2019,Maryland,24,4,7,2
+MD,2020,Maryland,24,4,1,2
+ME,2019,Maine,23,1,9,1
+ME,2020,Maine,23,0,5,3
+MI,2019,Michigan,26,2,9,0
+MI,2020,Michigan,26,7,3,0
+MN,2019,Minnesota,27,7,2,0
+MN,2020,Minnesota,27,5,2,7
+MO,2019,Missouri,29,2,5,4
+MO,2020,Missouri,29,3,4,4
+MS,2019,Mississippi,28,9,1,5
+MS,2020,Mississippi,28,6,3,1
+MT,2019,Montana,30,9,4,5
+MT,2020,Montana,30,5,2,7
+NC,2019,North Carolina,37,2,9,3
+NC,2020,North Carolina,37,1,3,7
+ND,2019,North Dakota,38,6,1,1
+ND,2020,North Dakota,38,6,8,8
+NE,2019,Nebraska,31,3,8,9
+NE,2020,Nebraska,31,8,8,2
+NH,2019,New Hampshire,33,5,8,4
+NH,2020,New Hampshire,33,4,4,7
+NJ,2019,New Jersey,34,3,7,2
+NJ,2020,New Jersey,34,7,4,9
+NM,2019,New Mexico,35,7,7,4
+NM,2020,New Mexico,35,4,6,3
+NV,2019,Nevada,32,9,7,7
+NV,2020,Nevada,32,7,7,4
+NY,2019,New York,36,5,9,3
+NY,2020,New York,36,7,9,5
+OH,2019,Ohio,39,2,3,9
+OH,2020,Ohio,39,8,9,2
+OK,2019,Oklahoma,40,4,9,2
+OK,2020,Oklahoma,40,3,7,2
+OR,2019,Oregon,41,1,3,4
+OR,2020,Oregon,41,3,7,7
+PA,2019,Pennsylvania,42,2,4,6
+PA,2020,Pennsylvania,42,8,2,0
+RI,2019,Rhode Island,44,8,3,2
+RI,2020,Rhode Island,44,3,1,5
+SC,2019,South Carolina,45,8,2,9
+SC,2020,South Carolina,45,4,4,4
+SD,2019,South Dakota,46,8,8,4
+SD,2020,South Dakota,46,6,2,5
+TN,2019,Tennessee,47,0,7,3
+TN,2020,Tennessee,47,0,4,5
+TX,2019,Texas,48,8,4,4
+TX,2020,Texas,48,4,3,2
+UT,2019,Utah,49,4,7,6
+UT,2020,Utah,49,9,1,0
+VA,2019,Virginia,51,1,5,9
+VA,2020,Virginia,51,8,2,5
+VT,2019,Vermont,50,6,6,5
+VT,2020,Vermont,50,6,8,2
+WA,2019,Washington,53,3,0,0
+WA,2020,Washington,53,3,7,2
+WI,2019,Wisconsin,55,5,6,5
+WI,2020,Wisconsin,55,1,9,9
+WV,2019,West Virginia,54,9,6,5
+WV,2020,West Virginia,54,9,9,7
+WY,2019,Wyoming,56,3,6,2
+WY,2020,Wyoming,56,9,8,1
+AL,2018,Alabama,1,4,7,0
+AK,2018,ALASKA,2,4,9,4
+AR,2018,Arkansas,5,1,8,1
+AZ,2018,Arizona,4,0,5,2
+CA,2018,California,6,5,9,0
+CO,2018,Colorado,8,4,7,5
+CT,2018,Connecticut,9,5,6,4
+DC,2018,District of Columbia,11,0,3,5
+DE,2018,Delaware,10,9,0,8
+FL,2018,Florida,12,6,4,8
+GA,2018,Georgia,13,8,5,2
+HI,2018,HAWAII,15,0,4,5
+IA,2018,Iowa,19,2,9,8
+ID,2018,Idaho,16,2,8,4
+IL,2018,Illinois,17,6,8,9
+IN,2018,Indiana,18,3,0,9
+KS,2018,Kansas,20,7,9,7
+KY,2018,Kentucky,21,0,9,9
+LA,2018,Louisiana,22,5,9,7
+MA,2018,Massachusetts,25,9,6,5
+MD,2018,Maryland,24,8,5,3
+ME,2018,Maine,23,3,3,4
+MI,2018,Michigan,26,3,1,7
+MN,2018,Minnesota,27,9,1,6
+MO,2018,Missouri,29,9,7,0
+MS,2018,Mississippi,28,5,6,0
+MT,2018,Montana,30,5,8,4
+NC,2018,North Carolina,37,6,2,2
+ND,2018,North Dakota,38,1,5,6
+NE,2018,Nebraska,31,7,6,1
+NH,2018,New Hampshire,33,6,7,4
+NJ,2018,New Jersey,34,3,5,6
+NM,2018,New Mexico,35,6,9,4
+NV,2018,Nevada,32,9,3,4
+NY,2018,New York,36,8,8,2
+OH,2018,Ohio,39,9,2,0
+OK,2018,Oklahoma,40,3,4,6
+OR,2018,Oregon,41,6,9,5
+PA,2018,Pennsylvania,42,1,1,4
+RI,2018,Rhode Island,44,5,9,8
+SC,2018,South Carolina,45,1,0,6
+SD,2018,South Dakota,46,1,0,2
+TN,2018,Tennessee,47,2,3,7
+TX,2018,Texas,48,1,6,5
+UT,2018,Utah,49,8,3,8
+VA,2018,Virginia,51,1,0,7
+VT,2018,Vermont,50,2,2,2
+WA,2018,Washington,53,5,8,2
+WI,2018,Wisconsin,55,4,6,1
+WV,2018,West Virginia,54,4,0,9
+WY,2018,Wyoming,56,8,5,9
+AL,2017,Alabama,1,3,6,1
+AK,2017,ALASKA,2,1,5,1
+AR,2017,Arkansas,5,7,9,3
+AZ,2017,Arizona,4,5,6,8
+CA,2017,California,6,0,7,6
+CO,2017,Colorado,8,5,6,0
+CT,2017,Connecticut,9,2,9,9
+DC,2017,District of Columbia,11,6,2,6
+DE,2017,Delaware,10,0,0,1
+FL,2017,Florida,12,2,4,0
+GA,2017,Georgia,13,1,0,8
+HI,2017,HAWAII,15,1,6,6
+IA,2017,Iowa,19,4,4,1
+ID,2017,Idaho,16,1,2,6
+IL,2017,Illinois,17,3,7,5
+IN,2017,Indiana,18,1,3,8
+KS,2017,Kansas,20,7,3,6
+KY,2017,Kentucky,21,5,8,1
+LA,2017,Louisiana,22,8,1,9
+MA,2017,Massachusetts,25,7,1,2
+MD,2017,Maryland,24,8,0,2
+ME,2017,Maine,23,4,7,9
+MI,2017,Michigan,26,9,5,2
+MN,2017,Minnesota,27,2,6,7
+MO,2017,Missouri,29,4,6,2
+MS,2017,Mississippi,28,5,6,0
+MT,2017,Montana,30,1,3,0
+NC,2017,North Carolina,37,5,7,2
+ND,2017,North Dakota,38,0,0,5
+NE,2017,Nebraska,31,2,2,0
+NH,2017,New Hampshire,33,9,2,1
+NJ,2017,New Jersey,34,3,2,0
+NM,2017,New Mexico,35,1,3,8
+NV,2017,Nevada,32,8,8,2
+NY,2017,New York,36,9,6,8
+OH,2017,Ohio,39,4,4,9
+OK,2017,Oklahoma,40,2,9,0
+OR,2017,Oregon,41,2,5,2
+PA,2017,Pennsylvania,42,0,4,8
+RI,2017,Rhode Island,44,5,7,7
+SC,2017,South Carolina,45,7,0,5
+SD,2017,South Dakota,46,7,2,7
+TN,2017,Tennessee,47,1,7,3
+TX,2017,Texas,48,0,9,5
+UT,2017,Utah,49,7,1,0
+VA,2017,Virginia,51,3,2,4
+VT,2017,Vermont,50,0,0,0
+WA,2017,Washington,53,2,0,0
+WI,2017,Wisconsin,55,5,5,9
+WV,2017,West Virginia,54,9,1,4
+WY,2017,Wyoming,56,8,6,2
+AL,2016,Alabama,1,1,4,3
+AK,2016,ALASKA,2,1,1,2
+AR,2016,Arkansas,5,3,6,6
+AZ,2016,Arizona,4,4,4,0
+CA,2016,California,6,1,3,3
+CO,2016,Colorado,8,4,0,1
+CT,2016,Connecticut,9,1,4,8
+DC,2016,District of Columbia,11,4,8,8
+DE,2016,Delaware,10,6,5,6
+FL,2016,Florida,12,5,0,5
+GA,2016,Georgia,13,6,9,5
+HI,2016,HAWAII,15,1,1,6
+IA,2016,Iowa,19,5,6,0
+ID,2016,Idaho,16,4,5,9
+IL,2016,Illinois,17,1,8,3
+IN,2016,Indiana,18,4,8,6
+KS,2016,Kansas,20,9,5,6
+KY,2016,Kentucky,21,4,2,3
+LA,2016,Louisiana,22,1,8,0
+MA,2016,Massachusetts,25,9,8,0
+MD,2016,Maryland,24,1,6,1
+ME,2016,Maine,23,2,0,9
+MI,2016,Michigan,26,4,5,5
+MN,2016,Minnesota,27,7,3,2
+MO,2016,Missouri,29,7,1,2
+MS,2016,Mississippi,28,8,0,4
+MT,2016,Montana,30,0,8,5
+NC,2016,North Carolina,37,0,9,0
+ND,2016,North Dakota,38,6,6,1
+NE,2016,Nebraska,31,9,5,1
+NH,2016,New Hampshire,33,8,4,0
+NJ,2016,New Jersey,34,3,1,5
+NM,2016,New Mexico,35,7,8,2
+NV,2016,Nevada,32,0,9,1
+NY,2016,New York,36,9,0,5
+OH,2016,Ohio,39,6,3,3
+OK,2016,Oklahoma,40,0,5,6
+OR,2016,Oregon,41,8,1,6
+PA,2016,Pennsylvania,42,4,9,2
+RI,2016,Rhode Island,44,1,8,3
+SC,2016,South Carolina,45,8,9,8
+SD,2016,South Dakota,46,1,2,2
+TN,2016,Tennessee,47,9,4,3
+TX,2016,Texas,48,0,9,4
+UT,2016,Utah,49,6,3,4
+VA,2016,Virginia,51,9,4,0
+VT,2016,Vermont,50,1,8,8
+WA,2016,Washington,53,7,8,8
+WI,2016,Wisconsin,55,8,8,2
+WV,2016,West Virginia,54,6,5,8
+WY,2016,Wyoming,56,7,6,5
+AL,2015,Alabama,1,2,8,6
+AK,2015,ALASKA,2,6,1,6
+AR,2015,Arkansas,5,0,4,5
+AZ,2015,Arizona,4,0,2,2
+CA,2015,California,6,6,3,8
+CO,2015,Colorado,8,2,4,5
+CT,2015,Connecticut,9,2,4,3
+DC,2015,District of Columbia,11,7,7,7
+DE,2015,Delaware,10,4,4,3
+FL,2015,Florida,12,1,5,4
+GA,2015,Georgia,13,5,4,7
+HI,2015,HAWAII,15,7,6,1
+IA,2015,Iowa,19,6,6,0
+ID,2015,Idaho,16,9,5,0
+IL,2015,Illinois,17,6,0,6
+IN,2015,Indiana,18,7,9,5
+KS,2015,Kansas,20,9,4,3
+KY,2015,Kentucky,21,4,6,4
+LA,2015,Louisiana,22,6,8,3
+MA,2015,Massachusetts,25,9,7,3
+MD,2015,Maryland,24,8,6,6
+ME,2015,Maine,23,0,4,7
+MI,2015,Michigan,26,9,4,7
+MN,2015,Minnesota,27,0,0,8
+MO,2015,Missouri,29,9,0,5
+MS,2015,Mississippi,28,3,4,9
+MT,2015,Montana,30,5,2,3
+NC,2015,North Carolina,37,9,6,1
+ND,2015,North Dakota,38,5,0,6
+NE,2015,Nebraska,31,4,7,5
+NH,2015,New Hampshire,33,2,7,0
+NJ,2015,New Jersey,34,1,1,9
+NM,2015,New Mexico,35,4,2,2
+NV,2015,Nevada,32,1,2,0
+NY,2015,New York,36,9,8,1
+OH,2015,Ohio,39,8,6,4
+OK,2015,Oklahoma,40,1,4,1
+OR,2015,Oregon,41,1,1,8
+PA,2015,Pennsylvania,42,9,4,6
+RI,2015,Rhode Island,44,4,9,6
+SC,2015,South Carolina,45,3,3,8
+SD,2015,South Dakota,46,9,7,3
+TN,2015,Tennessee,47,3,4,5
+TX,2015,Texas,48,1,8,2
+UT,2015,Utah,49,6,6,6
+VA,2015,Virginia,51,0,8,2
+VT,2015,Vermont,50,9,1,3
+WA,2015,Washington,53,4,6,4
+WI,2015,Wisconsin,55,2,3,3
+WV,2015,West Virginia,54,7,6,3
+WY,2015,Wyoming,56,9,4,3
