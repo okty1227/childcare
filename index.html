@@ -2,7 +2,7 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Childcare Dessert Compass</title>
+    <title>Childcare Desert Compass</title>
     <script src='https://d3js.org/d3.v7.min.js'></script>
     <script src='https://d3js.org/topojson.v3.min.js'></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
@@ -12,14 +12,14 @@
 
 <body>
 
-    <h1 class="headtitle">Childcare Dessert</h1>
+    <h1 class="headtitle">Childcare Desert</h1>
     <div>
         <div class="body-header">
             <div id="user-guide">
                 <h2>User Guide</h2>
                 <ul>
                     <li>Use the right-hand slider to find the year you are interested to know!</li>
-                    <li>Hover over a state to check out childcare dessert statistics by state.
+                    <li>Hover over a state to check out childcare Desert statistics by state.
                 </ul>
             </div>
             <div id="user-slider">
@@ -51,7 +51,7 @@
         <div>
 
             <div>
-                <span id="childcare-dessert-intro"></span>
+                <span id="childcare-Desert-intro"></span>
 
                 <p>A child care desert is any census tract with more than 50 children under age 5 that contains either
                     no child care providers or so few options that there are more than three times as many children as
@@ -927,8 +927,8 @@
 
             let selectedCounties = counties.features.filter(d => d.id >= stateFip * 1000 && d.id < stateFip * 1000 + 1000);
             let countyData = selectedCounties.map(d => fipToCounty(d.id));
-            const introTextLocator = d3.select('#childcare-dessert-intro');
-            introTextLocator.html(`${year} Childcare Dessert in <span style="color:#CC5803">${state.name}</span> with ${typeNameMapper[caseType]}`);
+            const introTextLocator = d3.select('#childcare-Desert-intro');
+            introTextLocator.html(`${year} Childcare Desert in <span style="color:#CC5803">${state.name}</span> with ${typeNameMapper[caseType]}`);
 
             /* COUNTY MAP */
             countyView.selectAll('path.county').data(selectedCounties)
