@@ -44,13 +44,14 @@ max_year = 2024
 
 # map with state data and county data
 # fips & name mapping
+raw_df['pop04'] = raw_df['pop04']/1000
 raw_data_full = pd.merge(left=raw_df, right=stfips, on=["stFips"])
 raw_data_full = raw_data_full.merge(countyfips, on=["cty_fips", "state"])
 
 ## county map data
 county_full_raw = raw_data_full[county_col_full_mapper.keys()]
 county_df = county_full_raw.rename(columns=county_col_full_mapper)
-county_df.to_csv("county.csv", index=False)
+county_df.to_csv("countyCaseData.csv", index=False)
 
 ## trend data
 trend_cols = ["pop04", "center_count_cc", "center_count_fdh", "center_count_other"]
@@ -88,7 +89,7 @@ for state in inusefips:
 trend_data = trend_data_grouped.reset_index()
 trend_data.rename(columns=trend_col_full_mapper, inplace=True)
 
-trend_data.to_csv("trend.csv", index=False)
+trend_data.to_csv("final_trend.csv", index=False)
 
 # state data
 # the number of data is selected to show on the dashboard
@@ -127,4 +128,4 @@ for idx, row in stfips[["stFips", "state_name", "state"]].iterrows():
 
 state_df.reset_index(inplace=True)
 state_df.rename(columns=state_col_full_mapper, inplace=True)
-state_df.to_csv("state.csv")
+state_df.to_csv("stateCaseData.csv")
