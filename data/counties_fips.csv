@@ -1,4 +1,4 @@
-fips,name,state
+cty_fips,county_name,state
 0,UNITED STATES,NA
 1000,ALABAMA,NA
 1001,Autauga,AL

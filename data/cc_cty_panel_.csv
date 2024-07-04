@@ -1,4 +1,4 @@
-﻿state,cty_fips,year,pop04,center_count_cc,capacity_total_cc,center_count_fdh,capacity_total_fdh,center_count_other,capacity_total_other,center_tot,capacity_total,cc_desert
+﻿stFips,cty_fips,Year,pop04,center_count_cc,capacity_total_cc,center_count_fdh,capacity_total_fdh,center_count_other,capacity_total_other,center_tot,capacity_total,cc_desert
 1,1073,2003,43237,,,1,0,,,1,0,1
 1,1073,2004,43084,,,1,0,,,1,0,1
 1,1073,2005,43091,,,1,0,,,1,0,1

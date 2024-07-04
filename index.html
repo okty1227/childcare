@@ -116,7 +116,7 @@
 
         const childcareTypes = ['Total_CC', 'Other_CC', 'FDH',]
 
-        const trendLineColors = { 'Total Childcare': '#ffca3a', '0-4Yrs Population': '#8ac926', 'Family Day Care': '#4267ac','Population(thousand)':'black'};
+        const trendLineColors = { 'Total Childcare': '#ffca3a', '0-4Yrs Population': '#8ac926', 'Family Day Care': '#4267ac', 'Population(thousand)': 'black' };
 
         // let countyDetails = { 'Total CC': null, 'Other CC': null, 'FDH': null };
         let countyDetails = {}
@@ -259,7 +259,7 @@
             accData = await d3.csv('data/stateCaseData.csv');
             accData = accData.map(obj => Object.fromEntries(
                 Object.entries(obj).map(([key, value]) => {
-                    if (key === 'Total_CC' || key === 'fipscode' || key === 'Year') {
+                    if (key === 'Total_CC' || key === 'FDH' || key === 'Other_CC' || key === 'stFips' || key === 'Year') {
                         return [key, Number(value)];
                     }
                     return [key, value];
@@ -288,15 +288,13 @@
                 await loadStateCaseData();
                 dataIsLoaded1 = true;
             }
-
             accDataSelected = accData.filter(function (d) {
                 return d.Year === year
             })
 
-            accDataSelected = accDataSelected.sort((a, b) => a.fipscode - b.fipscode);
+            accDataSelected = accDataSelected.sort((a, b) => a.stFips - b.stFips);
 
             function chooseCaseType(accDataSelected, casetype) {
-
 
                 /* state map */
                 // scales
@@ -345,7 +343,7 @@
                 function mouseEntersState(event) {
                     let selected = d3.select(this).datum();
                     stateInfoBox.attr('visibility', '');
-                    txtState.text(selected['ln_name'] + ' State');
+                    txtState.text(selected['state_name'] + ' State');
                     if (selected[casetype] === 0) {
                         txtCase.text('No Case records');
                     }
@@ -375,7 +373,6 @@
                 chooseCaseType(accDataSelected, lastSelectedCaseType)
             } else {
                 chooseCaseType(accDataSelected, lastSelectedCaseType)
-
             }
 
 
@@ -397,9 +394,10 @@
             function stateClicked(event) {
                 let selected = d3.select(this).datum();
                 // fipcode 2(Alaska) fipcode 15(Hawaii) should be excluded
-                // if (selected.fipscode !== 2 && selected.fipscode != 15) {
-                drawCountyPlot(selected.fipscode, year, lastSelectedCaseType);
-                drawTrendPlot(selected.fipscode);
+                // if (selected.fips !== 2 && selected.fips != 15) {
+                // console.log(lastSelectedCaseType)
+                drawCountyPlot(selected.stFips, year, lastSelectedCaseType);
+                drawTrendPlot(selected.stFips);
             }
         }
 
@@ -452,9 +450,6 @@
         let Xaxis = yearTrend.append('g');
         let Yaxis = yearTrend.append('g');
 
-        // const trendLineColors = { 'Total Childcare': '#ffca3a', 'Other Childcare': '#8ac926', 'Family Day Care': '#4267ac' };
-
-
         let trendPlot = yearTrend.append('g');
         let trendLegend = yearTrend.append('g').attr('transform', `translate(0, ${trendHeight - trendMargin.bottom})`);
 
@@ -483,7 +478,9 @@
             .attr('d', path);
 
         // add county map color legends group
-        let countyColorLegend = countyMap.append('g').attr('transform', `translate(0, ${countyHeight - 50})`);
+        let countyColorLegend = countyMap.append('g')
+            .attr('transform', `translate(0, ${countyHeight - 50})`);
+
         let countyLegends = [];
 
         // draw county case legend box
@@ -507,7 +504,7 @@
         countyColorLegend.append('text').text('Childcare Density')
             .attr('x', countyColorWidth)
             .attr('y', -5);
-
+        //TODO: fix legend scale colors, fill gray if NA or 0
         const countExtent = [10, 40, 50, 70, 80]
 
         const colorScaleCounty = d3.scaleQuantize()
@@ -527,25 +524,31 @@
         let boxWidth = 200;
         let boxHeight = 100;
 
-        let countyInfoBox = countyMap.append('g').attr('class', 'countyInfoBox').attr('transform', `translate(${countyWidth * 0.75}, 20)`).attr('visibility', 'hidden');
+        let countyInfoBox = countyMap.append('g')
+        .attr('class', 'countyInfoBox')
+        .attr('transform', `translate(${countyWidth * 0.75}, 20)`)
+        .attr('visibility', 'hidden');
 
         countyInfoBox.append('rect')
-            .attr('fill', countyColors[4])
-            .attr('opacity', 0.3)
-            .attr('x', 0)
-            .attr('y', 0)
-            .attr('rx', 5)
-            .attr('width', boxWidth)
-            .attr('height', boxHeight);
+                    .attr('fill', countyColors[4])
+                    .attr('opacity', 0.3)
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .attr('rx', 5)
+                    .attr('width', boxWidth)
+                    .attr('height', boxHeight);
 
         let countyName = countyInfoBox.append('text')
-            .attr('x', 10)
-            .attr('y', 20)
-            .attr('class', 'infobox');
-
+                                        .attr('x', 10)
+                                        .attr('y', 20)
+                                        .attr('class', 'infobox');
 
         Object.keys(countyDetails).forEach((key, i) => {
-            countyInfoBox.append('text').attr('class', 'infobox').attr('id', key).attr('x', 10).attr('y', 40 + i * 15);
+            countyInfoBox.append('text')
+                .attr('class', 'infobox')
+                .attr('id', key)
+                .attr('x', 10)
+                .attr('y', 40 + i * 15);
         })
         //zoom in animation
         var zoom = d3.zoom()
@@ -560,7 +563,8 @@
         // look up county data by fip code
         function fipToCounty(fip) {
             let county = countyFips[fip];
-            return countyAccidents[county.state + '-' + county.name];
+ 
+            return countyAccidents[county.state + '-' + county.county_name];
         }
 
         function fipToState(fip) {
@@ -573,14 +577,13 @@
             let countyData = d3.select(this).datum();
             let county = fipToCounty(countyData.id);
             // update text
-            countyName.text((countyData.id === 11001) ? 'D.C' : (countyFips[countyData.id].name + ' County'));
+            countyName.text((countyData.cty_fips === 11001) ? 'D.C' : (countyFips[countyData.id].county_name + ' County'));
             if (county != null) {
 
                 Object.keys(countyDetails).forEach((d, i) => {
                     countyInfoBox.select(`#${d}`).text(`Num of ${typeNameMapper[d]}: 
                     ${county[d][maxYear - selectedYear]}`)
                 })
-
             }
         }
 
@@ -594,10 +597,10 @@
         }
 
         async function loadTrendData(stateID) {
-            trendData = await d3.csv('data/final_trend2.csv');
+            trendData = await d3.csv('data/final_trend.csv');
             trendData = trendData.map(obj => Object.fromEntries(
                 Object.entries(obj).map(([key, value]) => {
-                    if (key === 'Year' || key === 'Other_CC' || key === 'Total_CC' || key === 'FDH' || key === 'fips' || key === 'pop') {
+                    if (key === 'Year' || key === 'Other_CC' || key === 'Total_CC' || key === 'FDH' || key === 'pop' || key === 'stFips') {
                         return [key, Number(value)];
                     }
                     return [key, value];
@@ -628,11 +631,11 @@
             await loadFips();
             await loadTrendData();
 
-            let stateCode = Number(stateFips[stateFip].id);
-            let selectedStateTrend = trendData.filter((d) => d.fips === stateCode);
+            let stateCode = Number(stateFips[stateFip].stFips);
+            let selectedStateTrend = trendData.filter((d) => d.stFips === stateCode);
 
             selectedStateTrend = selectedStateTrend.sort((a, b) => a.Year - b.Year);
-            console.log(selectedStateTrend)
+            // console.log(selectedStateTrend)
 
             const { maxCaseNum, minCaseNum } = getMinMaxValues(selectedStateTrend);
 
@@ -697,7 +700,8 @@
                     return yAxisScaler(d.Total_CC) + trendMargin.bottom
                 })
                 .attr('r', trendLinePointRadius)
-                .style('fill', trendLineColors['Total Childcare']).attr('transform', `translate(${trendMargin.left},${0})`);
+                .style('fill', trendLineColors['Total Childcare'])
+                .attr('transform', `translate(${trendMargin.left},${0})`);
 
             // line for all cases
             alltotalCaseLine
@@ -855,6 +859,7 @@
 
         // load case number data
         async function loadCountyData() {
+            //final_county_case
 
             countyCase = await d3.csv('data/countyCaseData.csv');
             countyCase.forEach(d => {
@@ -897,11 +902,12 @@
         async function loadFips() {
             let data = await d3.csv('data/state_fips.csv');
             data.forEach(d => {
-                stateFips[d.id] = d;
+                stateFips[d.stFips] = d;
             });
+            // console.log(data)
             data = await d3.csv('data/counties_fips.csv');
             data.forEach(d => {
-                countyFips[d.fips] = d;
+                countyFips[d.cty_fips] = d;
             });
         }
 
@@ -920,13 +926,16 @@
             let yearIndex = maxYear - year;
             let selectedState = fipToState(stateFip);
             let state = stateFips[stateFip];
-
+            console.log(state)
             let selectedCounties = counties.features.filter(d => d.id >= stateFip * 1000 && d.id < stateFip * 1000 + 1000);
             let countyData = selectedCounties.map(d => fipToCounty(d.id));
             const introTextLocator = d3.select('#childcare-Desert-intro');
-            introTextLocator.html(`${year} Childcare Desert in <span style="color:#CC5803">${state.name}</span> with ${typeNameMapper[caseType]}`);
+
+            introTextLocator.html(`${year} Childcare Desert in <span style="color:#CC5803">${state.state_name}</span> with ${typeNameMapper[caseType]}`);
+
 
             /* COUNTY MAP */
+            // console.log(selectedCounties)
             countyView.selectAll('path.county').data(selectedCounties)
                 .join('path')
                 .attr('class', 'county')
@@ -934,8 +943,7 @@
                 .attr('d', path)
                 .attr('fill', d => {
                     let county = fipToCounty(d.id);
-                    // console.log(county[caseType][yearIndex])
-
+                    console.log(county)
                     return (county == null) ? 'darkgray' : colorScaleCounty(county[caseType][yearIndex]);
                 })
                 .lower()
